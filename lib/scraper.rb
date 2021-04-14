@@ -14,10 +14,9 @@ def scrape_index_page(index_url)
   
   doc.css("div.student-card").each do |student|
     students << {
-    student = Student.new 
-    student.name = post.css("h4.student-name").text
-    student.location = post.css("p.student-location").text
-    student.profile_url = post.css("h3.view-profile-text").text
+    :name => student.css("h4.student-name").text
+    :location = student.css("p.student-location").text
+    :profile_url = student.children[1].attributes["href"].value 
     }
   end
   students 
