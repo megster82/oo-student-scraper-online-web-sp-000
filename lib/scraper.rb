@@ -13,11 +13,12 @@ def scrape_index_page(index_url)
   students = []
   
   doc.css("div.student-card").each do |student|
-    students << {
-    :name => student.css("h4.student-name").text
-    :location = student.css("p.student-location").text
-    :profile_url = student.children[1].attributes["href"].value 
-    }
+    
+    student = Student.new 
+    student.name = post.css("h4.student-name").text
+    student.location = post.css("p.student-location").text
+    student.profile_url = post.css("h3.profile_url").text
+    
   end
   students 
 end
