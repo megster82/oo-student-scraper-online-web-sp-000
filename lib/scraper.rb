@@ -15,7 +15,7 @@ def scrape_index_page(index_url)
   doc.css("div.student-card").each do |student|
     students << {
     student = Student.new 
-    student.name = post.css("h2").text
+    student.name = post.css("h4.student-name").text
     student.location = post.css(".location").text
     student.profile_url = post.css(".profile_url").text
     }
