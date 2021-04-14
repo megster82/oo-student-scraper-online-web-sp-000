@@ -20,7 +20,6 @@ def scrape_index_page(index_url)
     student.profile_url = post.css("h3.profile_url").text
     
   end
-  students 
 end
 
 def scrape_profile_page
