@@ -10,7 +10,7 @@ def scrape_index_page(index_url)
   html = open(index_url)
   doc = Nokogiri::HTML(open("https://learn-co-curriculum.github.io/student-scraper-test-page/index.html"))
   
-  doc.css(".post").each do |student|
+  doc.css("div.student-card").each do |student|
     student = Student.new 
     student.name = post.css("h2").text
     student.location = post.css(".location").text
