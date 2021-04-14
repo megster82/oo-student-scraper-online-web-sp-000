@@ -16,8 +16,8 @@ def scrape_index_page(index_url)
     students << {
     student = Student.new 
     student.name = post.css("h4.student-name").text
-    student.location = post.css(".location").text
-    student.profile_url = post.css(".profile_url").text
+    student.location = post.css("p.student-location").text
+    student.profile_url = post.css("h3.view-profile-text").text
     }
   end
   students 
